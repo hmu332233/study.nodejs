@@ -7,3 +7,4 @@
 - **app_dynamic.js** : 동적으로 웹페이지 만들기
 - **app_jade.js** : jade 간단 사용
 - **app_ejs.js** : ejs 간단 사용
+- *app_querystring.js** : querystring, semantic url
