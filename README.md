@@ -9,3 +9,4 @@
 - **app_ejs.js** : ejs 간단 사용
 - **app_querystring.js** : querystring, semantic url
 - **app_post.js** : post 사용, bodyParsing
+- **app_file.js** : 간단한 웹어플리케이션 만들기(관련 폴더는 _file이 붙음)
