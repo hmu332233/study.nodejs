@@ -46,6 +46,13 @@ app.post('/upload', upload.single('userfile'), function(req, res) {
         });
 
         unzipper.extract({ path: "uploads/zip/"+req.file.filename});
+        
+        unzipper.on('list', function (files) {
+            console.log('The archive contains:');
+            console.log(files);
+        });
+     
+        unzipper.list();
     }
 
     console.log(req.file);
