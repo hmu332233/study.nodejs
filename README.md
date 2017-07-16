@@ -12,3 +12,4 @@
 - **app_file.js** : 간단한 웹어플리케이션 만들기(관련 폴더는 _file이 붙음)
 - **app_multer.js** : multer 사용해보기
 - **app_unzip.js** : zip 파일 압축 해제
+- **database_mysql.js** : mysql 실습
