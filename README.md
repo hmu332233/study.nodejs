@@ -14,3 +14,4 @@
 - **app_unzip.js** : zip 파일 압축 해제
 - **database_mysql.js** : mysql 실습
 - **app_mysql.js** : mysql CRUD 실습. restful하지 않음
+- **app_cookie.js** : cookie 간단 사용
