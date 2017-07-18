@@ -18,3 +18,4 @@
 - **app_shopping.js** : cookie를 이용한 간단 장바구니
 - **app_session.js** : session 간단 사용 
 - **app_login.js** : login 구현
+- **app_session_file.js** : session정보 file로 저장
