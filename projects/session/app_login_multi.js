@@ -59,7 +59,7 @@ app.post('/auth/login', function (req, res){
     }
   }
   
-  res.send(res.send('Who are you? <a href="/auth/login">home</a>'))
+  res.send('Who are you? <a href="/auth/login">home</a>')
 
 })
 

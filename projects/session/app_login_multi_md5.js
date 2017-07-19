@@ -2,6 +2,7 @@ var express = require('express')
 var app = express()
 var session = require('express-session')
 var bodyParser = require('body-parser')
+var md5 = require('md5')
 
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
@@ -16,12 +17,12 @@ app.use(session({
 var users = [
   {
   username: 'test',
-  password: '123',
+  password: '202cb962ac59075b964b07152d234b70',
   displayName: 'mu'
   },
   {
   username: 'test2',
-  password: '123',
+  password: '202cb962ac59075b964b07152d234b70',
   displayName: 'mu2'
   }
 ]
@@ -51,7 +52,10 @@ app.post('/auth/login', function (req, res){
   for(var i in users){
     var user = users[i]
     
-    if(username === user.username && pwd === user.password) {
+    console.log(md5(pwd))
+    console.log(user.password)
+    
+    if(username === user.username && md5(pwd) === user.password) {
       req.session.displayName = user.displayName
       return req.session.save(function () {
         res.redirect('/welcome')
@@ -59,7 +63,7 @@ app.post('/auth/login', function (req, res){
     }
   }
   
-  res.send(res.send('Who are you? <a href="/auth/login">home</a>'))
+  res.send('Who are you? <a href="/auth/login">home</a>')
 
 })
 
