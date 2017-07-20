@@ -3,6 +3,7 @@ var app = express()
 var session = require('express-session')
 var bodyParser = require('body-parser')
 var md5 = require('md5')
+var sha256 = require('sha256')
 
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
@@ -17,13 +18,15 @@ app.use(session({
 var users = [
   {
   username: 'test',
-  password: '202cb962ac59075b964b07152d234b70',
-  displayName: 'mu'
+  password: 'e1c7076189868b6605da324238f7027cb9d9791535765cbcbb5dcb1f0a86e653',
+  displayName: 'mu',
+  salt: 'asdf'
   },
   {
   username: 'test2',
-  password: '202cb962ac59075b964b07152d234b70',
-  displayName: 'mu2'
+  password: 'aba8a62ec983b4f5f40bc4b050fc05c2c5fe23df90947c294f5ab687de9f2fa0',
+  displayName: 'mu2',
+  salt: 'fdsa'
   }
 ]
 
@@ -52,10 +55,10 @@ app.post('/auth/login', function (req, res){
   for(var i in users){
     var user = users[i]
     
-    console.log(md5(pwd))
+    console.log(sha256(pwd+user.salt))
     console.log(user.password)
     
-    if(username === user.username && md5(pwd) === user.password) {
+    if(username === user.username && sha256(pwd+user.salt) === user.password) {
       req.session.displayName = user.displayName
       return req.session.save(function () {
         res.redirect('/welcome')

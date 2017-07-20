@@ -20,3 +20,6 @@
 - **app_login.js** : login 구현
 - **app_session_file.js** : session정보 file로 저장
 - **app_login_multi.js** : login, register 구현
+- **app_md5.js** : md5 이용 비밀번호 암호화
+- **app_sha256.js** : sha256 이용 비밀번호 암호화
+- **app_pdkdf2.js** : pdkdf2 비밀번호 암호화(추천)
