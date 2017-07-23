@@ -24,3 +24,4 @@
 - **app_sha256.js** : sha256 이용 비밀번호 암호화
 - **app_pdkdf2.js** : pdkdf2 비밀번호 암호화(추천)
 - **app_passport.js** : passportjs를 이용한 인증(로그인) 구현
+- **app_passport_facebook.js** : facebook 타사인증 구현
