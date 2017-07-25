@@ -28,3 +28,4 @@
 - **app_passport_facebook.js** : facebook 타사인증 구현
 - **app_passport_mysql.js** : mysql를 이용한 인증 구현
 - **module.js** : 사용자 정의 모듈
+- **app_routes.js** : routes 분할
