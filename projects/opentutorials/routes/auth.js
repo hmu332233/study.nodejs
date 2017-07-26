@@ -1,6 +1,9 @@
 //외부에서 쓸 수 있도록 넘김
 module.exports = function (passport){
-    
+  
+    var bkfd2Password = require("pbkdf2-password");
+    var hasher = bkfd2Password();
+    var connection = require('../config/db')();
     var router = require('express').Router();
     
     router.get('/logout', function (req, res){
