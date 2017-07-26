@@ -1,0 +1,15 @@
+<% layout('/layouts/main.html') -%>
+
+<div class="container">
+  <h1>Login</h1>
+  <form action='/auth/login' method='POST'>
+  <p>
+    <input type='text' name='username' placeholder='username'>
+  </p>
+  <p>
+    <input type='password' name='password' placeholder='password'>
+  </p>
+  <input type='submit'>
+  </form>
+  <a href="/auth/facebook">facebook</a>
+</div>
