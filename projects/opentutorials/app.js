@@ -20,9 +20,19 @@ app.get('/welcome', function (req, res) {
 })
 
 
+app.get('/new',function(req,res){
+      console.log('test');
+      res.render('topic/new.html.ejs'); 
+  });
+
+
 //route
 var auth = require('./routes/auth')(passport);
 app.use('/auth', auth);
+
+var topic = require('./routes/topic')();
+app.use('/topic', topic);
+
 
 app.listen(process.env.PORT, function () {
   console.log('Connected!')

@@ -1,0 +1,12 @@
+<% layout('/layouts/topic.html') -%>
+<div class="">
+	<p>
+		<%=topic.title %>
+	</p>
+	<p>
+		<%=topic.content %>
+	</p>
+	<a href="/topic">home</a>
+	<a href="/topic/<%=topic.id %>/edit">edit</a>
+	<a href="/topic/<%=topic.id %>/delete">delete</a>
+</div>

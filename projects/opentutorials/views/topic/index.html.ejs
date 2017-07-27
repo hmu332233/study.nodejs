@@ -1,0 +1,8 @@
+<% layout('/layouts/topic.html') -%>
+
+	<ul>
+		<% for (var i=0; i < topics.length; i++) { %>
+		<li><a href="/topic/<%=topics[i].id %>"><%=topics[i].title%></a></li>
+		<% } %>
+	</ul>
+	<a href='topic/new'>new</a>
