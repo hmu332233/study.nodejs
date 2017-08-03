@@ -5,7 +5,7 @@ exports.create = function (req, res) {
   
   user.save(function (err, doc){
     if(err) return res.status(500).send(err);
-    res.send("User saved successfullly:\n" + doc);
+    res.send("User saved successfully:\n" + doc);
   });
 };
 
@@ -45,11 +45,23 @@ exports.findByName = function (req, res) {
 };
 
 exports.findByIdAndUpdate = function (req, res) {
-    
+  
+  var id = req.params.id;
+  
+  User.findByIdAndUpdate(id, req.body, {new: true}, function (err, user) {
+    if(err) return res.status(500).send(err);
+    res.send("User findByIdAndUpdate successfully:\n" + user);
+  });
 };
 
 exports.findByNameAndUpdate = function (req, res) {
-    
+  
+  var name = req.params.username;
+  
+  User.findOneAndUpdate({ "name": name }, req.body, {new: true}, function (err, user){
+    if(err) return res.status(500).send(err);
+    res.send("User findOneUpdate successfully:\n" + user);
+  });
 };
 
 exports.delete = function (req, res) {
