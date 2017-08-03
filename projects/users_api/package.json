@@ -4,12 +4,16 @@
   "description": "api server study",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "mocha test/users/user.spec.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "mocha": "^3.5.0"
   }
 }
