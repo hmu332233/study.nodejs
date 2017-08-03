@@ -15,13 +15,14 @@ $ curl -sL https://deb.nodesource.com/setup_6.x | bash -
 $ apt-get install -y nodejs
 ```
 
-- **express 설치**
-```bash
-$ npm init
-$ npm install express --save
-```
 - **MongoDB**
   - `apt-get install mongodb`
   - `mkdir -p /data/db` : 몽고DB가 사용하는 기본 데이터 디렉토리를 생성 
   - `mongod` : 서버 실행
   - `mongo` : 콘솔 접속
+	
+### 실행
+```bash
+$ npm install
+$ npm start 또는 node app.js
+```
