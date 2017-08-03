@@ -11,7 +11,7 @@
 - **nodejs 설치**
 ```bash
 $ apt-get install curl
-$ curl -sL https://deb.nodesource.com/setup_4.x | bash -
+$ curl -sL https://deb.nodesource.com/setup_6.x | bash -
 $ apt-get install -y nodejs
 ```
 
