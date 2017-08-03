@@ -65,9 +65,19 @@ exports.findByNameAndUpdate = function (req, res) {
 };
 
 exports.delete = function (req, res) {
-    
+  
+  var username = req.params.username;
+  
+  User.remove({ "name": username }, function (err){
+    if(err) return res.status(500).send(err);
+    res.send("User deleted successfully");
+  });
 };
 
 exports.deleteAll = function(req, res) {
     
+  User.remove({}, function (err){
+    if(err) return res.status(500).send(err);
+    res.send("User deleted successfully");
+  })
 };
